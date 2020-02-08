@@ -1,8 +1,10 @@
-# JavaScript ASN1 Parser/Decoder PWA Library
+# BigInteger, RSA and ECC PWA Library
+
+A fast, portable implementation of large-number math in pure JavaScript, enabling public-key crypto and other applications on desktop and mobile browsers.
 
 This is library for a fork project of [PWA](https://github.com/SergioRando/PWA)
 
-Full version can be found at [PWA Library](https://github.com/SergioRando/PWA-Library)
+Original library (without GCC support) can be found on the [official website](http://www-cs-students.stanford.edu/~tjw/jsbn/)
 
 # Template
 Read full installation process before executing any command
@@ -47,7 +49,7 @@ _Note: you can't copy link to new repo from GitHub project page, because its emp
 3. Add ***PWA Library Template*** repository as an Upstream Remote
 ```
 cd {NewRepo}
-git remote add upstream https://github.com/SergioRando/js-lite.git
+git remote add upstream https://github.com/SergioRando/js-bn.git
 ```
 4. Update your fork
 ```
@@ -69,7 +71,7 @@ _Note: don't forget to change README.md_
 ## 6. Prepare
 
 1. Remove Template block from README.md
-2. Replace all 'js-lite' with '{NewRepo}'
+2. Replace all 'js-bn' with '{NewRepo}'
 3. Edit NOTICE
 
 # Update
@@ -118,7 +120,7 @@ String Replacements
 
 ```
 cd {Project Path}/src/lib
-git submodule add https://github.com/SergioRando/js-lite.git
+git submodule add https://github.com/SergioRando/js-bn.git
 ```
 _Note: don't forget to add notice about library license to yours project_
 
@@ -127,10 +129,10 @@ String Replacements
 * _{Project Path}_ - path to drive with symlinks support (**NOT FAT32/NTFS/exFAT**)
 ```
 cd {Project Path}/src/lib
-git submodule deinit js-lite
-git rm js-lite
-git commit -m "Removed submodule js-lite"
+git submodule deinit js-bn
+git rm js-bn
+git commit -m "Removed submodule js-bn"
 cd {Project Path}
-rm -rf ./git/modules/src/lib/js-lite
+rm -rf ./git/modules/src/lib/js-bn
 ```
 _Note: be careful executing **rm** commands! It delete files permanenlty!_
