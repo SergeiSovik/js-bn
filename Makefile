@@ -102,7 +102,7 @@ test: clean build-release
 
 build-release: $(BIN_MAIN)
 
-$(BIN_MAIN): $(REL_GLOBALS) $(REL_MODULES) $(REL_EXTERNAL) $(REL_LIBS)
+$(BIN_MAIN): $(REL_GLOBALS) $(REL_MODULES) $(REL_EXTERNAL) $(REL_LIBS) Makefile
 	@echo "Building $(patsubst $(REL_ROOT)/%,%,$@)"
 	@( cd $(REL_ROOT); $(strip $(GCC)) $(GCC_ECMASCRIPT2017) $(GCC_PLATFORM) $(GCC_EXTERNAL) $(GCC_LIBS) $(GCC_MODULES) $(GCC_GLOBALS) --create_source_map "$(patsubst $(REL_ROOT)/%,%,$@).map" --js_output_file "$(patsubst $(REL_ROOT)/%,%,$@)" 2>&1 | ./compiler/errors.sh )
 	@echo "//# sourceMappingURL=$(patsubst $(REL_BIN)/%,%,$@).map" >> $@
