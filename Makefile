@@ -26,10 +26,10 @@ LIB_LIST=
 MAIN=test.js
 
 # List of global modules, executed before main module
-GLOBALS=$(patsubst ./%,%,$(shell find ./globals -type f -name "*.js"))
+GLOBALS=$(patsubst ./%,%,$(shell find ./globals/ -type f -name "*.js"))
 
 # List of dependency modules, executed only if included in main or global modules
-MODULES=$(patsubst ./%,%,$(shell find ./modules -type f -name "*.js"))
+MODULES=$(patsubst ./%,%,$(shell find ./modules/ -type f -name "*.js"))
 
 # List of external modules, executed only if included in main or global modules
 define EXTERNAL
