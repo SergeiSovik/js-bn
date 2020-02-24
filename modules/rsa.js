@@ -150,7 +150,6 @@ export class RSAKey {
 
 	/**
 	 * Perform raw public operation on "x": return x^e (mod n)
-	 * @protected
 	 * @param {BigInteger} x
 	 * @returns {BigInteger}
 	 */

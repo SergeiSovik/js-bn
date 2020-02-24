@@ -12,7 +12,7 @@
 
 // Requires jsbn.js and jsbn2.js
 
-import { BigInteger, Barrett } from "./jsbn.js"
+import { BigInteger, Barrett, nbv } from "./jsbn.js"
 
 // ----------------
 // ECFieldElementFp
@@ -112,7 +112,7 @@ function integerToBytes(i, len) {
 	// FIX: undefined toByteArrayUnsigned()
 	let l = len < bytes.length ? len : bytes.length;
 	for (let i = l - 1; i >= 0; i--) {
-		bytes &= 0xFF;
+		bytes[i] &= 0xFF;
 	}
 
 	if (len < bytes.length) {
@@ -458,8 +458,8 @@ export class ECPointFp {
 			return this.curve.getInfinity();
 		}
 
-		let TWO = this.curve.fromBigInteger(BigInteger.valueOf(2));
-		let THREE = this.curve.fromBigInteger(BigInteger.valueOf(3));
+		let TWO = this.curve.fromBigInteger(nbv(2));
+		let THREE = this.curve.fromBigInteger(nbv(3));
 		let gamma = this.x.square().multiply(THREE).add(this.curve.a).divide(this.y.multiply(TWO));
 
 		let x3 = gamma.square().subtract(this.x.multiply(TWO));
@@ -538,12 +538,12 @@ export class ECPointFp {
 		// Check coordinate bounds
 		let x = this.getX().toBigInteger();
 		let y = this.getY().toBigInteger();
-		if (x.compareTo(BigInteger.ONE) < 0 ||
-			x.compareTo(n.subtract(BigInteger.ONE)) > 0) {
+		if (x.compareTo(BigInteger.ONE()) < 0 ||
+			x.compareTo(n.subtract(BigInteger.ONE())) > 0) {
 			throw new Error('x coordinate out of bounds');
 		}
-		if (y.compareTo(BigInteger.ONE) < 0 ||
-			y.compareTo(n.subtract(BigInteger.ONE)) > 0) {
+		if (y.compareTo(BigInteger.ONE()) < 0 ||
+			y.compareTo(n.subtract(BigInteger.ONE())) > 0) {
 			throw new Error('y coordinate out of bounds');
 		}
 
