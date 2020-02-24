@@ -1367,14 +1367,16 @@ export class BigInteger {
 	// static BigInteger valueOf(long val)
 
 	// "constants"
+	/** @returns {BigInteger} */
 	static ZERO() {
 		if (BigInteger._ZERO === undefined) BigInteger._ZERO = nbv(0);
-		return BigInteger._ZERO;
+		return /** @type {BigInteger} */ ( BigInteger._ZERO );
 	}
 
+	/** @returns {BigInteger} */
 	static ONE() {
 		if (BigInteger._ONE === undefined) BigInteger._ONE = nbv(1);
-		return BigInteger._ONE;
+		return /** @type {BigInteger} */ ( BigInteger._ONE );
 	}
 }
 

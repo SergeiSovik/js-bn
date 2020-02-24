@@ -6,6 +6,8 @@ This is library for a fork project of [PWA](https://github.com/SergioRando/PWA)
 
 Original library (without GCC support) can be found on the [official website](http://www-cs-students.stanford.edu/~tjw/jsbn/)
 
+Patched ec.js from bitcoin-lib/ecdsa.js [BitcoinJS](https://github.com/bitcoinjs/bitcoinjs-lib)
+
 # Install
 Read full installation process before executing any command
 
