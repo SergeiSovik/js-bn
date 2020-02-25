@@ -214,7 +214,7 @@ function am3(r,i,x,w,j,c,n) {
 
 // Bits per digit
 /** @type {number} */
-const dbits = ((j_lm && (navigator.appName == "Microsoft Internet Explorer")) ? 30 : ((j_lm && (navigator.appName != "Netscape")) ? 26 : 28));
+const dbits = ((j_lm && (platform['navigator'] !== undefined && navigator.appName == "Microsoft Internet Explorer")) ? 30 : ((j_lm && (platform['navigator'] !== undefined && navigator.appName != "Netscape")) ? 26 : 28));
 
 // Mozilla/Netscape seems to prefer am3
 const am = (dbits === 30 ? am2 : (dbits === 26 ? am1 : am3));
