@@ -1,6 +1,6 @@
 /**
  * Original work Copyright (c) 2003-2005 Tom Wu <tjw@cs.Stanford.EDU>
- * Modified work Copyright (c) 2020 Sergio Rando <sergio.rando@yahoo.com>
+ * Modified work Copyright (c) 2020 Sergei Sovik <sergeisovik@yahoo.com>
  */
 
 "use strict";
