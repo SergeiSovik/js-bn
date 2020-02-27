@@ -16,4 +16,4 @@
 
 "use strict";
 
-//platform.console.log('js-bn', 'Skip Test');
+platform.console.log('js-bn', 'Skip Test');
